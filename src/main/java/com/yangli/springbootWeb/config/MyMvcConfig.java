@@ -36,6 +36,6 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
          * excludePathPatterns表示忽略拦截的请求
          * 对于静态资源，springboot已经做好了映射，所以我们不需要做任何处理
          */
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index","/","/user/login","/asserts/**","/webjars/**");
+//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index","/","/user/login","/asserts/**","/webjars/**");
     }
 }
