@@ -10,7 +10,7 @@
 
 		<title>Dashboard Template for Bootstrap</title>
 		<!-- Bootstrap core CSS -->
-		<link href="asserts/css/bootstrap.min.css" th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
+		<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
 		<link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
@@ -39,6 +39,22 @@
 				-webkit-animation: chartjs-render-animation 0.001s;
 				animation: chartjs-render-animation 0.001s;
 			}
+            #compile_btn {
+                padding-left:18px;
+                line-height:18px;
+                background:blue url(/asserts/img/pen.png) 0px 4px no-repeat;
+            }
+            #add_btn {
+                padding-left:18px;
+                line-height:18px;
+                background:darkgreen url(/asserts/img/friend_add.png) 0px 4px no-repeat;
+            }
+            #del_btn {
+                padding-left:18px;
+                line-height:18px;
+                background:red url(/asserts/img/del.png) 0px 4px no-repeat;
+            }
+
 		</style>
 	</head>
 
@@ -63,7 +79,7 @@
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 					<h2>员工列表</h2>
 					<div style="margin-bottom: 5px;float: right">
-						<button class="btn btn-outline-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span>增加员工</button>
+						<button class="btn btn-success btn-sm" id="add_btn">增加员工</button>
 					</div>
 					<div class="table-responsive">
 						<table class="table table-striped table-sm">
@@ -88,8 +104,8 @@
 								<td th:text="${employee.department.departmentName}"></td>
 								<td th:text="${#dates.format(employee.birth,'yyyy-MM-dd HH:mm:ss')}"></td>
 								<td>
-									<button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span>编辑</button>
-									<button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span>删除</button>
+									<button class="btn btn-primary btn-sm" id="compile_btn">编辑</button>
+									<button class="btn btn-danger btn-sm" id="del_btn">删除</button>
 								</td>
 							</tr>
 							</tbody>
