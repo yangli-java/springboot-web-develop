@@ -28,4 +28,9 @@ public class EmployeeController {
         return "/emps/list";
     }
 
+    @GetMapping("/addEmployee")
+    public String saveEmployee(){
+        return "/emps/addEmployee";
+    }
+
 }
