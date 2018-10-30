@@ -29,8 +29,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/addEmployee")
-    public String saveEmployee(){
-        return "/emps/addEmployee";
+    public String saveEmployee(Employee employee){
+        System.out.println(employee);
+        return "/emps/list";
     }
 
 }
