@@ -130,7 +130,7 @@
 								<td th:text="${#dates.format(employee.birth,'yyyy-MM-dd HH:mm:ss')}"></td>
 								<td>
 									<button class="btn btn-primary btn-sm" id="compile_btn">编辑</button>
-									<button class="btn btn-danger btn-sm" id="del_btn">删除</button>
+									<a type="button" th:href="@{/delEmployee(id=${employee.id})}" class="btn btn-danger btn-sm" id="del_btn">删除</a>
 								</td>
 							</tr>
 							</tbody>

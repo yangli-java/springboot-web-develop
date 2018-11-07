@@ -28,10 +28,24 @@ public class EmployeeController {
         return "/emps/list";
     }
 
+    /**
+     * 员工添加，springMvc会自动将请求参数和入参对象的属性进行一一绑定，但前提是请求参数的参数名必须与入参对象的属性名相一致。
+     * 即请求参数在HTML中的name属性与对象的属性名一致
+     * @param employee
+     * @return
+     */
     @GetMapping("/addEmployee")
     public String saveEmployee(Employee employee){
-        System.out.println(employee);
-        return "/emps/list";
+        System.err.println(employee);
+        employeeDao.save(employee);
+        //redirect:表示重定向到一个地址;forward：表示转发到一个地址
+        return "redirect:/getEmployees";
+    }
+
+    @GetMapping("/delEmployee")
+    public String delEmployee(Integer id){
+        employeeDao.delete(id);
+        return "redirect:/getEmployees";
     }
 
 }

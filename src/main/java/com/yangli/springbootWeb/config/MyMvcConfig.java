@@ -34,7 +34,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
          * addInterceptor表示添加一个拦截器
          * addPathPatterns表示需要拦截的请求，/**表示拦截任意请求
          * excludePathPatterns表示忽略拦截的请求
-         * 对于静态资源，springboot已经做好了映射，所以我们不需要做任何处理
+         * /asserts/**，/webjars/**忽略静态资源的拦截
          */
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index","/","/user/login","/asserts/**","/webjars/**");
     }
